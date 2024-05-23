@@ -96,7 +96,15 @@ provide('moreGames', [
   }
 
 ])
+import {ref} from 'vue'
 import LifecycleComponents from './components/LifecycleComponents.vue'
+
+const showHide = ref(true)
+
+
+import BaiscComponent from './components/BaiscComponent.vue'
+
+import ReactiveObject from './components/ReactiveObject.vue'
 
 </script>
 
@@ -109,5 +117,11 @@ import LifecycleComponents from './components/LifecycleComponents.vue'
 
   <PracticeComponentVue />
   <hr>
-  <LifecycleComponents/>
+  <LifecycleComponents v-if="showHide"/>
+  <button @click="showHide = !showHide">Show/Hide</button>
+
+  <hr>
+  <BaiscComponent />
+  <hr>
+  <ReactiveObject />
 </template>
